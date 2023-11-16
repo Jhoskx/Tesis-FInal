@@ -1,0 +1,12 @@
+D:\REPOS\tesis-DDD\Tesis-DD\Tesis-DDD.Auth\bin\Debug\net6.0\Tesis-DDD.Auth.deps.json
+D:\REPOS\tesis-DDD\Tesis-DD\Tesis-DDD.Auth\bin\Debug\net6.0\Tesis-DDD.Auth.dll
+D:\REPOS\tesis-DDD\Tesis-DD\Tesis-DDD.Auth\bin\Debug\net6.0\Tesis-DDD.Auth.pdb
+D:\REPOS\tesis-DDD\Tesis-DD\Tesis-DDD.Auth\obj\Debug\net6.0\Tesis-DDD.Auth.GeneratedMSBuildEditorConfig.editorconfig
+D:\REPOS\tesis-DDD\Tesis-DD\Tesis-DDD.Auth\obj\Debug\net6.0\Tesis-DDD.Auth.AssemblyInfoInputs.cache
+D:\REPOS\tesis-DDD\Tesis-DD\Tesis-DDD.Auth\obj\Debug\net6.0\Tesis-DDD.Auth.AssemblyInfo.cs
+D:\REPOS\tesis-DDD\Tesis-DD\Tesis-DDD.Auth\obj\Debug\net6.0\Tesis-DDD.Auth.csproj.CoreCompileInputs.cache
+D:\REPOS\tesis-DDD\Tesis-DD\Tesis-DDD.Auth\obj\Debug\net6.0\Tesis-DDD.Auth.sourcelink.json
+D:\REPOS\tesis-DDD\Tesis-DD\Tesis-DDD.Auth\obj\Debug\net6.0\Tesis-DDD.Auth.dll
+D:\REPOS\tesis-DDD\Tesis-DD\Tesis-DDD.Auth\obj\Debug\net6.0\refint\Tesis-DDD.Auth.dll
+D:\REPOS\tesis-DDD\Tesis-DD\Tesis-DDD.Auth\obj\Debug\net6.0\Tesis-DDD.Auth.pdb
+D:\REPOS\tesis-DDD\Tesis-DD\Tesis-DDD.Auth\obj\Debug\net6.0\ref\Tesis-DDD.Auth.dll

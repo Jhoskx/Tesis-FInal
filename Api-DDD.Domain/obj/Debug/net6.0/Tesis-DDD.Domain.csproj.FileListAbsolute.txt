@@ -1,0 +1,12 @@
+D:\REPOS\tesis-DDD\Tesis-DD\Api-DDD.Domain\bin\Debug\net6.0\Tesis-DDD.Domain.deps.json
+D:\REPOS\tesis-DDD\Tesis-DD\Api-DDD.Domain\bin\Debug\net6.0\Tesis-DDD.Domain.dll
+D:\REPOS\tesis-DDD\Tesis-DD\Api-DDD.Domain\bin\Debug\net6.0\Tesis-DDD.Domain.pdb
+D:\REPOS\tesis-DDD\Tesis-DD\Api-DDD.Domain\obj\Debug\net6.0\Tesis-DDD.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\REPOS\tesis-DDD\Tesis-DD\Api-DDD.Domain\obj\Debug\net6.0\Tesis-DDD.Domain.AssemblyInfoInputs.cache
+D:\REPOS\tesis-DDD\Tesis-DD\Api-DDD.Domain\obj\Debug\net6.0\Tesis-DDD.Domain.AssemblyInfo.cs
+D:\REPOS\tesis-DDD\Tesis-DD\Api-DDD.Domain\obj\Debug\net6.0\Tesis-DDD.Domain.csproj.CoreCompileInputs.cache
+D:\REPOS\tesis-DDD\Tesis-DD\Api-DDD.Domain\obj\Debug\net6.0\Tesis-DDD.Domain.sourcelink.json
+D:\REPOS\tesis-DDD\Tesis-DD\Api-DDD.Domain\obj\Debug\net6.0\Tesis-DDD.Domain.dll
+D:\REPOS\tesis-DDD\Tesis-DD\Api-DDD.Domain\obj\Debug\net6.0\refint\Tesis-DDD.Domain.dll
+D:\REPOS\tesis-DDD\Tesis-DD\Api-DDD.Domain\obj\Debug\net6.0\Tesis-DDD.Domain.pdb
+D:\REPOS\tesis-DDD\Tesis-DD\Api-DDD.Domain\obj\Debug\net6.0\ref\Tesis-DDD.Domain.dll
