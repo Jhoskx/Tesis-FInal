@@ -40,7 +40,7 @@ namespace Tesis_DDD.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProjectId = table.Column<int>(type: "int", nullable: false),
+                    proyectid = table.Column<int>(type: "int", nullable: false),
                     Screen1Id = table.Column<int>(type: "int", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -106,32 +106,6 @@ namespace Tesis_DDD.Infrastructure.Migrations
                     table.PrimaryKey("PK_ExpertEstimates", x => x.Id);
                     table.ForeignKey(
                         name: "FK_ExpertEstimates_Screens1_Screen1Id",
-                        column: x => x.Screen1Id,
-                        principalTable: "Screens1",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Responsibles",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    projectId = table.Column<int>(type: "int", nullable: false),
-                    Screen1Id = table.Column<int>(type: "int", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    Status = table.Column<bool>(type: "bit", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Responsibles", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Responsibles_Screens1_Screen1Id",
                         column: x => x.Screen1Id,
                         principalTable: "Screens1",
                         principalColumn: "Id",
@@ -289,11 +263,6 @@ namespace Tesis_DDD.Infrastructure.Migrations
                 column: "ExpertEstimateId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Responsibles_Screen1Id",
-                table: "Responsibles",
-                column: "Screen1Id");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_resultAlgoriths_EstimationAlgorithmId",
                 table: "resultAlgoriths",
                 column: "EstimationAlgorithmId");
@@ -322,9 +291,6 @@ namespace Tesis_DDD.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "ResourceLists");
-
-            migrationBuilder.DropTable(
-                name: "Responsibles");
 
             migrationBuilder.DropTable(
                 name: "resultAlgoriths");

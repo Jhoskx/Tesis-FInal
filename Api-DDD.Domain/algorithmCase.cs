@@ -1,9 +1,10 @@
-﻿namespace Api_DDD.Domain
+﻿using Api_DDD.Domain.Common;
+
+namespace Api_DDD.Domain
 {
-    public class algorithmCase
+    public class algorithmCase:MasterEntity
     {
-        public int MyProperty { get; set; }
-        public int MyProperty1 { get; set; }
-        public string? description { get; set; }
+        public int proyectid { get; set; }
+        public virtual Screen1 Screen1 { get; set; }
     }
 }

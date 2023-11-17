@@ -5,6 +5,9 @@ namespace Tesis_DDD.Infrastructure
 {
     public class TesisDbContext : DbContext
     {
+        public TesisDbContext(DbContextOptions<TesisDbContext> options) : base(options)
+        {
+        }
         public DbSet<Screen1> Screens1 { get; set; }
         public DbSet<useCase>UseCases { get; set; }
         public DbSet<UseCaseAlgorith>UseCaseAlgoriths { get; set; }
@@ -14,7 +17,7 @@ namespace Tesis_DDD.Infrastructure
         public DbSet<expertEstimate>ExpertEstimates{ get; set; }
         public DbSet<estimationAlgorithm>EstimationAlgorithms{ get; set; }
         public DbSet<resourceList>ResourceLists{ get; set; }
-        public DbSet<responsible>Responsibles{ get; set; }
+        //public DbSet<responsible>Responsibles{ get; set; }
 
     }
 }

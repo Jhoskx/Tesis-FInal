@@ -12,7 +12,7 @@ using Tesis_DDD.Infrastructure;
 namespace Tesis_DDD.Infrastructure.Migrations
 {
     [DbContext(typeof(TesisDbContext))]
-    [Migration("20231116034318_inicio")]
+    [Migration("20231117033219_inicio")]
     partial class inicio
     {
         /// <inheritdoc />
@@ -216,14 +216,14 @@ namespace Tesis_DDD.Infrastructure.Migrations
                     b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ProjectId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Screen1Id")
                         .HasColumnType("int");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
+
+                    b.Property<int>("proyectid")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -349,45 +349,6 @@ namespace Tesis_DDD.Infrastructure.Migrations
                     b.ToTable("ResourceLists");
                 });
 
-            modelBuilder.Entity("Api_DDD.Domain.responsible", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Screen1Id")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("projectId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Screen1Id");
-
-                    b.ToTable("Responsibles");
-                });
-
             modelBuilder.Entity("Api_DDD.Domain.useCase", b =>
                 {
                     b.Property<int>("Id")
@@ -502,17 +463,6 @@ namespace Tesis_DDD.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("ExpertEstimate");
-                });
-
-            modelBuilder.Entity("Api_DDD.Domain.responsible", b =>
-                {
-                    b.HasOne("Api_DDD.Domain.Screen1", "Screen1")
-                        .WithMany()
-                        .HasForeignKey("Screen1Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Screen1");
                 });
 
             modelBuilder.Entity("Api_DDD.Domain.useCase", b =>
