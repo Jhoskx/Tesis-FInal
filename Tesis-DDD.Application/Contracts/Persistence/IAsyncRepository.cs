@@ -25,14 +25,14 @@ namespace Tesis_DDD.Application.Contracts.Persistence
             bool disableTracking = true);
 
         Task<T> GetByIdAsync(int id);
-        Task<T> AddAsync(T entity);
-        Task<T[]> AddRangeAsync(T[] entities);
-        Task<T> UpdateAsync(T entity);
-        Task DeleteAsync(T entity);
-        void AddEntity(T entity);
-        void AddEntityRange(T[] entities);
-        void UpdateEntity(T entity);
-        void DeleteEntity(T entity);
+        Task<T> AddAsync(T Entity);
+        Task<T[]> AddRangeAsync(T[] Entities);
+        Task<T> UpdateAsync(T Entity);
+        Task DeleteAsync(T Entity);
+        void AddEntity(T Entity);
+        void AddEntityRange(T[] Entities);
+        void UpdateEntity(T Entity);
+        void DeleteEntity(T Entity);
         //Task<T> GetByIdWithSpec(ISpecification<T> spec);
 
         //Task<IReadOnlyList<T>> GetAllWithSpec(ISpecification<T> spec);
