@@ -21,11 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Api-DDD.Domain\Tesis-DDD.Domain.csproj" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <ProjectReference Include="..\Tesis-DDD.Application\Tesis-DDD.Application.csproj" />
   </ItemGroup>
 
 </Project>

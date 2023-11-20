@@ -1,6 +1,6 @@
 ﻿namespace Api_DDD.Domain.Common
 {
-    public class Entity
+    public abstract class Entity
     {
         public int Id { get; set; }
         public string? CreatedBy { get; set; }
@@ -10,3 +10,4 @@
         public bool Status { get; set; } // Por revisar
     }
 }
+ 
