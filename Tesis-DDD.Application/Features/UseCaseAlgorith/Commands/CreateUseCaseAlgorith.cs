@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tesis_DDD.Application.Features.AlgorithmCase.Commands
 {
-    internal class Class1
+    internal class CreateAlgorithmCase
     {
     }
 }
