@@ -12,24 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\AlgorithmCase\Commands\" />
-    <Folder Include="Features\AlgorithmCase\Queries\" />
-    <Folder Include="Features\EstimationAlgorithm\Commands\" />
-    <Folder Include="Features\EstimationAlgorithm\Queries\" />
-    <Folder Include="Features\expertEstimate\Commands\" />
-    <Folder Include="Features\expertEstimate\Queries\" />
-    <Folder Include="Features\ResourceList\Commands\" />
-    <Folder Include="Features\ResourceList\Queries\" />
-    <Folder Include="Features\ResultAlgorith\Commands\" />
-    <Folder Include="Features\ResultAlgorith\Queries\" />
-    <Folder Include="Features\ResultEstimate\Commands\" />
-    <Folder Include="Features\ResultEstimate\Queries\" />
-    <Folder Include="Features\Screen1\Commands\" />
-    <Folder Include="Features\Screen1\Queries\" />
-    <Folder Include="Features\UseCaseAlgorith\Commands\" />
-    <Folder Include="Features\UseCaseAlgorith\Queries\" />
-    <Folder Include="Features\UseCase\Commands\" />
-    <Folder Include="Features\UseCase\Queries\" />
     <Folder Include="NewFolder1\" />
   </ItemGroup>
 
