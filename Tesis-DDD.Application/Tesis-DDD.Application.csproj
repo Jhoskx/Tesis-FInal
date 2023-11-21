@@ -26,4 +26,16 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\AlgorithmCase\Queries\Get\" />
+    <Folder Include="Features\EstimationAlgorithm\Queries\Get\" />
+    <Folder Include="Features\expertEstimate\Queries\Get\" />
+    <Folder Include="Features\ResourceList\Queries\Get\" />
+    <Folder Include="Features\Screen1\Queries\Get\" />
+    <Folder Include="Features\UseCaseAlgorith\Queries\Get\" />
+    <Folder Include="Features\UseCase\Queries\Get\" />
+    <Folder Include="Models\ViewModels\ResultEstimate\" />
+    <Folder Include="Models\ViewModels\ResultAlgorith\" />
+  </ItemGroup>
+
 </Project>
