@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Tesis_DDD.Application.Features.AlgorithmCase.Commands
+﻿namespace Tesis_DDD.Application.Features.expertEstimate.Queries
 {
-    internal class CreateAlgorithmCase
+    public class GetexpertEstimate
     {
     }
 }
