@@ -10,5 +10,15 @@ namespace Api_DDD.Domain
         public string ResponsiblePosition { get; set; }
         public string DevelopmentType { get; set; }
 
+
+        public Screen1 (string nameProject, string finalUser, string developmentMethodology, string responsiblePosition, string developmentType)  
+        {
+        NameProject = nameProject;
+            FinalUser = finalUser;
+            DevelopmentMethodology = developmentMethodology;
+            ResponsiblePosition = responsiblePosition;
+            DevelopmentType = developmentType;
+        }
+        public Screen1(){ }
     }
 }

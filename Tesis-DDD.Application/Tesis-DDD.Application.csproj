@@ -22,18 +22,21 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="FluentValidation" Version="11.8.0" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.0" />
+    <PackageReference Include="MediatR" Version="11.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\AlgorithmCase\Queries\Get\" />
-    <Folder Include="Features\EstimationAlgorithm\Queries\Get\" />
-    <Folder Include="Features\expertEstimate\Queries\Get\" />
-    <Folder Include="Features\ResourceList\Queries\Get\" />
-    <Folder Include="Features\Screen1\Queries\Get\" />
-    <Folder Include="Features\UseCaseAlgorith\Queries\Get\" />
-    <Folder Include="Features\UseCase\Queries\Get\" />
+    <Folder Include="Features\AlgorithmCases\Queries\Get\" />
+    <Folder Include="Features\EstimationAlgorithms\Queries\Get\" />
+    <Folder Include="Features\expertEstimates\Queries\Get\" />
+    <Folder Include="Features\ResourceLists\Queries\Get\" />
+    <Folder Include="Features\ResultEstimates\Queries\Get\" />
+    <Folder Include="Features\Screen1s\Queries\Get\" />
+    <Folder Include="Features\UseCaseAlgoriths\Queries\Get\" />
+    <Folder Include="Features\UseCases\Queries\Get\" />
     <Folder Include="Models\ViewModels\ResultEstimate\" />
     <Folder Include="Models\ViewModels\ResultAlgorith\" />
   </ItemGroup>

@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Api-DDD.Domain\Tesis-DDD.Domain.csproj" />
     <ProjectReference Include="..\Tesis-DDD.Application\Tesis-DDD.Application.csproj" />
   </ItemGroup>
 
