@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="dotenv.net" Version="3.1.3" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -16,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Tesis-DDD.Application\Tesis-DDD.Application.csproj" />
+    <ProjectReference Include="..\Tesis-DDD.Auth\Tesis-DDD.Auth.csproj" />
     <ProjectReference Include="..\Tesis-DDD.Infrastructure\Tesis-DDD.Infrastructure.csproj" />
   </ItemGroup>
 
