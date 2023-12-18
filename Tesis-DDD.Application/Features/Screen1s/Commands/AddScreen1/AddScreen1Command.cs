@@ -9,5 +9,6 @@ namespace Tesis_DDD.Application.Features.Screen1s.Commands.AddScreen1
         public string DevelopmentMethodology { get; set; }
         public string ResponsiblePosition { get; set; }
         public string DevelopmentType { get; set; }
+        public string DevelopmentArea { get; set; }
     }
 }

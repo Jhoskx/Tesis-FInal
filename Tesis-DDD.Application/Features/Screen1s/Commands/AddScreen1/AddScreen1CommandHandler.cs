@@ -1,7 +1,6 @@
 ﻿
 using Api_DDD.Domain;
 using MediatR;
-using MediatR.Wrappers;
 using Microsoft.Extensions.Logging;
 using Tesis_DDD.Application.Contracts.Persistence;
 
@@ -26,11 +25,12 @@ namespace Tesis_DDD.Application.Features.Screen1s.Commands.AddScreen1
               request.FinalUser,
               request.DevelopmentMethodology,
               request.ResponsiblePosition,
-              request.DevelopmentType
+              request.DevelopmentType,
+              request.DevelopmentArea
      
                 );
             await  _unitOfWork.Repository<Screen1>().AddAsync( screen1 );
-            string msg = $"se ha cregado el registo exitosa mente con el numer {screen1.Id}";
+            string msg = $"se ha cregado el registro con el Id: {screen1.Id}";
             return msg ;
         }
     }
