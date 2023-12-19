@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Tesis_DDD.Application;
+using Tesis_DDD.Infrastructure;
 using Tesis_DDD.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddApplicationServices();
+builder.Services.AddInfrastructureServices(builder.Configuration);
 
 builder.Services.AddDbContext<TesisDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 var app = builder.Build();

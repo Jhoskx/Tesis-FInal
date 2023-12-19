@@ -4,7 +4,7 @@ using Tesis_DDD.Application.Contracts.Persistence;
 
 namespace Tesis_DDD.Infrastructure.Specification
 {
-    public class SpecificationEvaluator<T>where T : Entity
+    public class SpecificationEvaluator<T>where T : class
     {
 
         public static IQueryable<T> GetQuery(IQueryable<T> inputQuery, ISpecification<T> spec)

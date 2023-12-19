@@ -1,4 +1,4 @@
-﻿using Api_DDD.Domain.Common;
+﻿
 using System.Collections;
 using Tesis_DDD.Application.Contracts.Persistence;
 using Tesis_DDD.Infrastructure.Persistence;
@@ -15,7 +15,9 @@ namespace Tesis_DDD.Infrastructure.Repositories
             _context = context;
         }
 
-        public TesisDbContext TesisDbContext => _context;
+        public TesisDbContext TicketsDbContext => _context;
+
+        //public IConfigurationRepository ConfigurationRepository => throw new NotImplementedException();
 
         public async Task<int> Complete()
         {
@@ -24,19 +26,10 @@ namespace Tesis_DDD.Infrastructure.Repositories
 
         public void Dispose()
         {
-            try
-            {
-                _context.Dispose();
-
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
+            _context.Dispose();
         }
 
-        public IRepository<TEntity> Repository<TEntity>() where TEntity : Entity
+        public IRepository<TEntity> Repository<TEntity>() where TEntity : class
         {
             if (_repositories == null)
                 _repositories = new Hashtable();
@@ -49,6 +42,7 @@ namespace Tesis_DDD.Infrastructure.Repositories
                 var repository = Activator.CreateInstance(repositoryType.MakeGenericType(typeof(TEntity)), _context);
                 _repositories.Add(type, repository);
             }
+
             return (IRepository<TEntity>)_repositories[type];
         }
 

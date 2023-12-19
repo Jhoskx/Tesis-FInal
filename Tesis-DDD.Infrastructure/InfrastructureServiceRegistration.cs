@@ -13,6 +13,7 @@ namespace Tesis_DDD.Infrastructure
         {
             services.AddDbContext<TesisDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
+            //Generic repositories
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
