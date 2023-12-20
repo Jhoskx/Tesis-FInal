@@ -2,7 +2,7 @@
 
 namespace Tesis_DDD.Application.Features.Screen1s.Commands.AddScreen1
 {
-    public class AddScreen1Command:  IRequest<string>
+    public class AddScreen1Command:  IRequest<int>
     {
         public string NameProject { get; set; }
         public string FinalUser { get; set; }
