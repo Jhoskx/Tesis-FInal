@@ -1,11 +1,7 @@
-﻿using MediatR;
-using System.Runtime.Serialization;
-
-namespace Tesis_DDD.Application.Features.Screen1s.Commands.UpdateScreen1
+﻿namespace Tesis_DDD.Application.Models.ViewModels.Screen1
 {
-    public class UpdateScreen1Command:IRequest<string>
+    public class Screen1Vm
     {
-    
         public string NameProject { get; set; }
         public string FinalUser { get; set; }
         public string DevelopmentMethodology { get; set; }

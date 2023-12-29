@@ -22,4 +22,8 @@
     <ProjectReference Include="..\Tesis-DDD.Infrastructure\Tesis-DDD.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+
 </Project>

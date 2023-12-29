@@ -36,8 +36,6 @@
     <Folder Include="Features\Screen1s\Queries\Get\" />
     <Folder Include="Features\UseCaseAlgoriths\Queries\Get\" />
     <Folder Include="Features\UseCases\Queries\Get\" />
-    <Folder Include="Models\ViewModels\ResultEstimate\" />
-    <Folder Include="Models\ViewModels\ResultAlgorith\" />
   </ItemGroup>
 
 </Project>
