@@ -29,8 +29,8 @@ namespace Tesis_DDD.Api.Controllers
         //}
 
         [HttpPost]
-        [ProducesResponseType(typeof(AddScreen1Command), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<AddScreen1Command>> CreateScreen1([FromBody] AddScreen1Command command)
+        [ProducesResponseType(typeof(AddProjectCommand), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<AddProjectCommand>> CreateScreen1([FromBody] AddProjectCommand command)
           =>Ok(await _mediator.Send(command));
 
 

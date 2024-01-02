@@ -1,10 +1,9 @@
 ﻿using MediatR;
 
-namespace Tesis_DDD.Application.Features.Screen1s.Commands.UpdateScreen1
+namespace Tesis_DDD.Application.Features.Screen1s.Commands.AddScreen1
 {
-    public class UpdateProjectCommand:IRequest<string>
+    public class AddProjectCommand :  IRequest<int>
     {
-
         public string Name { get; set; }
         public string Area { get; set; }
         public string MethodologyId { get; set; }
