@@ -13,11 +13,11 @@ namespace Tesis_DDD.Api.Controllers
 #if !DEBUG
 [Authorize]
 #endif
-    public class Screens1Controllers : ControllerBase
+    public class ProjectsControllers : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public Screens1Controllers(IMediator mediator)
+        public ProjectsControllers(IMediator mediator)
         {
             _mediator = mediator;
         }
@@ -37,9 +37,9 @@ namespace Tesis_DDD.Api.Controllers
         [HttpPut("{nameproject}")]
         [ProducesResponseType(typeof(int), (int)HttpStatusCode.OK)]
         [ProducesDefaultResponseType]
-        public async Task<ActionResult<int>> UpdateScreen([FromBody] UpdateScreen1Command command, string nameProject)
+        public async Task<ActionResult<int>> UpdateScreen([FromBody] UpdateProjectCommand command, string nameProject)
         {
-            command.NameProject = nameProject;
+            command.Name = nameProject;
             return Ok(await _mediator.Send(nameProject));
         }
     }

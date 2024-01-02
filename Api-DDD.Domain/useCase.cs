@@ -2,9 +2,13 @@
 
 namespace Api_DDD.Domain
 {
-    public class useCase:MasterEntity
+    public class useCase : MasterEntity
     {
-        public int idEstimate { get; set; }
-        public virtual expertEstimate ExpertEstimate { get; set; }
+        public string Name { get; set; }
+        public int ProjectId { get; set; }
+        public virtual Project Project { get; set; }
+        public int time { get; set; }
+
+
     }
 }

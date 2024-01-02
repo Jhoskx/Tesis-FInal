@@ -9,11 +9,11 @@ using Tesis_DDD.Application.Contracts.Persistence;
 
 namespace Tesis_DDD.Application.Features.Screen1s.Commands.AddScreen1
 {
-    public class AddScreen1CommandHandler : IRequestHandler<AddScreen1Command, int>
+    public class AddProjectCommandHandler : IRequestHandler<AddScreen1Command, int>
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public AddScreen1CommandHandler(IUnitOfWork unitOfWork)
+        public AddProjectCommandHandler(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
@@ -21,15 +21,10 @@ namespace Tesis_DDD.Application.Features.Screen1s.Commands.AddScreen1
         public async Task<int> Handle(AddScreen1Command request, CancellationToken cancellationToken)
         {
 
-            var screen = new Screen1(
-                request.NameProject,
-                request.FinalUser,
-                request.DevelopmentMethodology,
-                request.ResponsiblePosition,
-                request.DevelopmentType,
-                request.DevelopmentArea
+            var screen = new Project(
+               
                 );
-            await _unitOfWork.Repository<Screen1>().AddAsync(screen);
+            await _unitOfWork.Repository<Project>().AddAsync((Project)screen);
             return screen.Id;
         }
     }

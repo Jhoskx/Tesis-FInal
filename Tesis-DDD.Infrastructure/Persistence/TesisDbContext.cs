@@ -8,7 +8,7 @@ namespace Tesis_DDD.Infrastructure.Persistence
         public TesisDbContext(DbContextOptions<TesisDbContext> options) : base(options)
         {
         }
-        public DbSet<Screen1> Screens1 { get; set; }
+        public DbSet<Project> Screens1 { get; set; }
         public DbSet<useCase> UseCases { get; set; }
         public DbSet<UseCaseAlgorith> UseCaseAlgoriths { get; set; }
         public DbSet<Resultestimate> Resultestimates { get; set; }
