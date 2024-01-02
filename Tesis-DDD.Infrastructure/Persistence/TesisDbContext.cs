@@ -16,7 +16,7 @@ namespace Tesis_DDD.Infrastructure.Persistence
         public DbSet<algorithmCase> AlgorithmCases { get; set; }
         public DbSet<expertEstimate> ExpertEstimates { get; set; }
         public DbSet<estimationAlgorithm> EstimationAlgorithms { get; set; }
-        public DbSet<resourceList> ResourceLists { get; set; }
+        //public DbSet<resourceList> ResourceLists { get; set; }
         //public DbSet<responsible>Responsibles{ get; set; }
 
     }
