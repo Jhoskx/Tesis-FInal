@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Tesis_DDD.Api.Controllers
 {
@@ -9,6 +10,11 @@ namespace Tesis_DDD.Api.Controllers
 #endif
     public class ResourceController : ControllerBase
     {
-
+        private readonly IMediator _mediator;
+         
+        public ResourceController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
     }
 }
