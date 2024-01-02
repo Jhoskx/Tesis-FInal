@@ -21,8 +21,6 @@ namespace Tesis_DDD.Application.Features.Screen1s.Commands.UpdateScreen1
                 throw new NotFoundException($"No Project Found With The Name: {request.Name}");
 
 
-
-
             project.Name =request.Name;
             project.Area = request.Area;
             project.MethodologyId = request.MethodologyId;
@@ -31,7 +29,6 @@ namespace Tesis_DDD.Application.Features.Screen1s.Commands.UpdateScreen1
             project.TestingHours = request.TestingHours;
             project.DeploymentTime = request.DeploymentTime;
             project.StartDate = request.StartDate;
-
 
 
             await _unitOfWork.Complete();
