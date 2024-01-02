@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
-using System.Threading.Tasks;
 using Tesis_DDD.Application.Features.Screen1s.Commands.AddScreen1;
 using Tesis_DDD.Application.Features.Screen1s.Commands.UpdateScreen1;
 using Tesis_DDD.Application.Features.Screen1s.Queries.Get;
@@ -14,11 +13,11 @@ namespace Tesis_DDD.Api.Controllers
 #if !DEBUG
 [Authorize]
 #endif
-    public class ProjectsControllers : ControllerBase
+    public class ProjectsController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public ProjectsControllers(IMediator mediator)
+        public ProjectsController(IMediator mediator)
         {
             _mediator = mediator;
         }

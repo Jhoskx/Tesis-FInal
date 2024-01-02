@@ -2,7 +2,7 @@
 
 namespace Api_DDD.Domain
 {
-    public class Resources:MasterEntity
+    public class Resource:MasterEntity
     {
         public string Name {get; set;}
         public int ProjectId { get; set; }
