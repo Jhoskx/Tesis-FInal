@@ -31,7 +31,6 @@
     <Folder Include="Features\AlgorithmCases\Queries\Get\" />
     <Folder Include="Features\EstimationAlgorithms\Queries\Get\" />
     <Folder Include="Features\expertEstimates\Queries\Get\" />
-    <Folder Include="Features\ResourceLists\Queries\Get\" />
     <Folder Include="Features\ResultEstimates\Queries\Get\" />
     <Folder Include="Features\UseCaseAlgoriths\Queries\Get\" />
     <Folder Include="Features\UseCases\Queries\Get\" />
