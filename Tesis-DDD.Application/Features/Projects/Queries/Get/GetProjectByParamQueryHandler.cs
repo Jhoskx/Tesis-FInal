@@ -15,10 +15,10 @@ namespace Tesis_DDD.Application.Features.Projects.Queries.Get
         private readonly PaginationHelper _paginationHelper;
         private readonly IMapper _mapper;
 
-        public GetProjectByParamQueryHandler(IUnitOfWork unitOfWork, PaginationHelper paginationHelper, IMapper mapper)
+        public GetProjectByParamQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
-            _paginationHelper = paginationHelper;
+            _paginationHelper = new PaginationHelper(_mapper);
             _mapper = mapper;
         }
 
