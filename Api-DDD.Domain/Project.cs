@@ -6,15 +6,15 @@ namespace Api_DDD.Domain
     {
         public string Name { get; set; }
         public string Area { get; set; }
-        public string MethodologyId { get; set; }
-        public  virtual Methodology Methodology { get; set; }
+        public int MethodologyId { get; set; }
+        public virtual Methodology Methodology { get; set; }
         public string ResponsiblePosition { get; set; }
         public string DevelopmentType { get; set; }
         public int TestingHours { get; set; }
         public int DeploymentTime { get; set; }
         public DateTime StartDate { get; set; }
 
-        public Project(string name, string area, string methodologyId, string responsiblePosition, string developmentType, int testingHours, int deploymentTime, DateTime startDate)
+        public Project(string name, string area, int methodologyId, string responsiblePosition, string developmentType, int testingHours, int deploymentTime, DateTime startDate)
         {
             Name = name;
             Area = area;

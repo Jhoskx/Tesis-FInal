@@ -7,7 +7,7 @@ namespace Tesis_DDD.Application.Features.Screen1s.Commands.UpdateScreen1
 
         public string Name { get; set; }
         public string Area { get; set; }
-        public string MethodologyId { get; set; }
+        public int MethodologyId { get; set; }
         public string ResponsiblePosition { get; set; }
         public string DevelopmentType { get; set; }
         public int TestingHours { get; set; }

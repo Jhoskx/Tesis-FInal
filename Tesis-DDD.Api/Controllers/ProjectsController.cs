@@ -21,15 +21,17 @@ namespace Tesis_DDD.Api.Controllers
         {
             _mediator = mediator;
         }
+
         [HttpGet]
-        [ProducesResponseType(typeof(PaginationVm<ProjectVm>), (int)HttpStatusCode.OK)]
-        [ProducesDefaultResponseType]
-        public async Task<ActionResult<PaginationVm<ProjectVm>>> GetQuotation([FromQuery] GetProjectByParamQuery query)
-          => Ok(await _mediator.Send(query));
+        [ProducesResponseType(typeof(List<ProjectVm>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<IReadOnlyList<ProjectVm>>> GetNew([FromQuery] GetProjectByParamQuery query)
+        {
+            return Ok(await _mediator.Send(query));
+        }
 
         [HttpPost]
         [ProducesResponseType(typeof(AddProjectCommand), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<AddProjectCommand>> CreateScreen1([FromBody] AddProjectCommand command)
+        public async Task<ActionResult<AddProjectCommand>> CreateProject([FromBody] AddProjectCommand command)
           =>Ok(await _mediator.Send(command));
 
 

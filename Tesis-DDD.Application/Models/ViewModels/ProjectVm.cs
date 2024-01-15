@@ -2,6 +2,7 @@
 {
     public class ProjectVm
     {
+        public int IdProject { get; set; }
         public string Name { get; set; }
         public string Area { get; set; }
         public string MethodologyId { get; set; }

@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tesis-DDD.Application", "Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tesis-DDD.Auth", "Tesis-DDD.Auth\Tesis-DDD.Auth.csproj", "{F73D1D8A-2D79-46B3-8376-E9EB9F2D0D34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesis-DDD.Infrastructure", "Tesis-DDD.Infrastructure\Tesis-DDD.Infrastructure.csproj", "{7782A4DD-B187-4C59-99E9-032E2DDC4C69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tesis-DDD.Infrastructure", "Tesis-DDD.Infrastructure\Tesis-DDD.Infrastructure.csproj", "{7782A4DD-B187-4C59-99E9-032E2DDC4C69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

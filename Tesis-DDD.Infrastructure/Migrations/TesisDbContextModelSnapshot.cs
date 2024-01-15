@@ -22,7 +22,7 @@ namespace Tesis_DDD.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Api_DDD.Domain.ResultAlgorith", b =>
+            modelBuilder.Entity("Api_DDD.Domain.Experience", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -39,9 +39,6 @@ namespace Tesis_DDD.Infrastructure.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("EstimationAlgorithmId")
-                        .HasColumnType("int");
-
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
@@ -51,17 +48,15 @@ namespace Tesis_DDD.Infrastructure.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
-                    b.Property<int>("idEstimate")
+                    b.Property<int>("Time")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EstimationAlgorithmId");
-
-                    b.ToTable("resultAlgoriths");
+                    b.ToTable("Experiences");
                 });
 
-            modelBuilder.Entity("Api_DDD.Domain.Resultestimate", b =>
+            modelBuilder.Entity("Api_DDD.Domain.Methodology", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -78,9 +73,6 @@ namespace Tesis_DDD.Infrastructure.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ExpertEstimateId")
-                        .HasColumnType("int");
-
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
@@ -90,17 +82,12 @@ namespace Tesis_DDD.Infrastructure.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
-                    b.Property<int>("idEstimate")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ExpertEstimateId");
-
-                    b.ToTable("Resultestimates");
+                    b.ToTable("Methodologies");
                 });
 
-            modelBuilder.Entity("Api_DDD.Domain.Screen1", b =>
+            modelBuilder.Entity("Api_DDD.Domain.Project", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -108,35 +95,36 @@ namespace Tesis_DDD.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Area")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("DevelopmentArea")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("DeploymentTime")
+                        .HasColumnType("int");
 
-                    b.Property<string>("DevelopmentMethodology")
-                        .IsRequired()
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DevelopmentType")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FinalUser")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("NameProject")
+                    b.Property<int>("MethodologyId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -147,12 +135,17 @@ namespace Tesis_DDD.Infrastructure.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
+                    b.Property<int>("TestingHours")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Screens1");
+                    b.HasIndex("MethodologyId");
+
+                    b.ToTable("Projects");
                 });
 
-            modelBuilder.Entity("Api_DDD.Domain.UseCaseAlgorith", b =>
+            modelBuilder.Entity("Api_DDD.Domain.Resource", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -169,7 +162,7 @@ namespace Tesis_DDD.Infrastructure.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("EstimationAlgorithmId")
+                    b.Property<int>("ExperienceId")
                         .HasColumnType("int");
 
                     b.Property<string>("LastModifiedBy")
@@ -178,300 +171,43 @@ namespace Tesis_DDD.Infrastructure.Migrations
                     b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("idEstimate")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EstimationAlgorithmId");
-
-                    b.ToTable("UseCaseAlgoriths");
-                });
-
-            modelBuilder.Entity("Api_DDD.Domain.algorithmCase", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Screen1Id")
+                    b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
-                    b.Property<int>("proyectid")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("Screen1Id");
+                    b.HasIndex("ProjectId");
 
-                    b.ToTable("AlgorithmCases");
+                    b.ToTable("Resources");
                 });
 
-            modelBuilder.Entity("Api_DDD.Domain.estimationAlgorithm", b =>
+            modelBuilder.Entity("Api_DDD.Domain.Project", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Screen1Id")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("idproject")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Screen1Id");
-
-                    b.ToTable("EstimationAlgorithms");
-                });
-
-            modelBuilder.Entity("Api_DDD.Domain.expertEstimate", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Screen1Id")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("projectId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Screen1Id");
-
-                    b.ToTable("ExpertEstimates");
-                });
-
-            modelBuilder.Entity("Api_DDD.Domain.resourceList", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ExpertEstimateId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("idEstimate")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ExpertEstimateId");
-
-                    b.ToTable("ResourceLists");
-                });
-
-            modelBuilder.Entity("Api_DDD.Domain.useCase", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ExpertEstimateId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("idEstimate")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ExpertEstimateId");
-
-                    b.ToTable("UseCases");
-                });
-
-            modelBuilder.Entity("Api_DDD.Domain.ResultAlgorith", b =>
-                {
-                    b.HasOne("Api_DDD.Domain.estimationAlgorithm", "EstimationAlgorithm")
+                    b.HasOne("Api_DDD.Domain.Methodology", "Methodology")
                         .WithMany()
-                        .HasForeignKey("EstimationAlgorithmId")
+                        .HasForeignKey("MethodologyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("EstimationAlgorithm");
+                    b.Navigation("Methodology");
                 });
 
-            modelBuilder.Entity("Api_DDD.Domain.Resultestimate", b =>
+            modelBuilder.Entity("Api_DDD.Domain.Resource", b =>
                 {
-                    b.HasOne("Api_DDD.Domain.expertEstimate", "ExpertEstimate")
+                    b.HasOne("Api_DDD.Domain.Project", "Project")
                         .WithMany()
-                        .HasForeignKey("ExpertEstimateId")
+                        .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ExpertEstimate");
-                });
-
-            modelBuilder.Entity("Api_DDD.Domain.UseCaseAlgorith", b =>
-                {
-                    b.HasOne("Api_DDD.Domain.estimationAlgorithm", "EstimationAlgorithm")
-                        .WithMany()
-                        .HasForeignKey("EstimationAlgorithmId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("EstimationAlgorithm");
-                });
-
-            modelBuilder.Entity("Api_DDD.Domain.algorithmCase", b =>
-                {
-                    b.HasOne("Api_DDD.Domain.Screen1", "Screen1")
-                        .WithMany()
-                        .HasForeignKey("Screen1Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Screen1");
-                });
-
-            modelBuilder.Entity("Api_DDD.Domain.estimationAlgorithm", b =>
-                {
-                    b.HasOne("Api_DDD.Domain.Screen1", "Screen1")
-                        .WithMany()
-                        .HasForeignKey("Screen1Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Screen1");
-                });
-
-            modelBuilder.Entity("Api_DDD.Domain.expertEstimate", b =>
-                {
-                    b.HasOne("Api_DDD.Domain.Screen1", "Screen1")
-                        .WithMany()
-                        .HasForeignKey("Screen1Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Screen1");
-                });
-
-            modelBuilder.Entity("Api_DDD.Domain.resourceList", b =>
-                {
-                    b.HasOne("Api_DDD.Domain.expertEstimate", "ExpertEstimate")
-                        .WithMany()
-                        .HasForeignKey("ExpertEstimateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ExpertEstimate");
-                });
-
-            modelBuilder.Entity("Api_DDD.Domain.useCase", b =>
-                {
-                    b.HasOne("Api_DDD.Domain.expertEstimate", "ExpertEstimate")
-                        .WithMany()
-                        .HasForeignKey("ExpertEstimateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ExpertEstimate");
+                    b.Navigation("Project");
                 });
 #pragma warning restore 612, 618
         }
