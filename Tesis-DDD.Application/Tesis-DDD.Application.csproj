@@ -28,7 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\" />
+    <Folder Include="Features\Resources\Commands\UpdateResource\" />
+    <Folder Include="Features\Resources\Queries\GetResource\" />
     <Folder Include="Specifications\Resources\" />
   </ItemGroup>
 

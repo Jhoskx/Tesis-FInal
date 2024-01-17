@@ -35,13 +35,13 @@ namespace Tesis_DDD.Api.Controllers
           =>Ok(await _mediator.Send(command));
 
 
-        [HttpPut("{nameproject}")]
-        [ProducesResponseType(typeof(int), (int)HttpStatusCode.OK)]
-        [ProducesDefaultResponseType]
-        public async Task<ActionResult<int>> UpdateScreen([FromBody] UpdateProjectCommand command, string nameProject)
-        {
-            command.Name = nameProject;
-            return Ok(await _mediator.Send(nameProject));
-        }
+        //[HttpPut("{nameproject}")]
+        //[ProducesResponseType(typeof(int), (int)HttpStatusCode.OK)]
+        //[ProducesDefaultResponseType]
+        //public async Task<ActionResult<int>> UpdateScreen([FromBody] UpdateProjectCommand command, string nameProject)
+        //{
+        //    command.Name = nameProject;
+        //    return Ok(await _mediator.Send(nameProject));
+        //}
     }
 }
