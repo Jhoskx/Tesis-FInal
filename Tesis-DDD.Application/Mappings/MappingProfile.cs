@@ -1,10 +1,5 @@
 ﻿using Api_DDD.Domain;
 using AutoMapper;
-using Microsoft.VisualBasic;
-using System.Diagnostics;
-using System.Net.Mail;
-using System.Reflection.PortableExecutable;
-using System;
 using Tesis_DDD.Application.Models.ViewModels;
 
 namespace Tesis_DDD.Application.Mappings
@@ -16,6 +11,7 @@ namespace Tesis_DDD.Application.Mappings
             var @types = new Dictionary<Type, Type>
             {
                 { typeof(Project), typeof(ProjectVm) },
+                { typeof(Resource), typeof(ResourceVm) },
            
             };
 
