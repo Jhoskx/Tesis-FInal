@@ -10,5 +10,13 @@ namespace Api_DDD.Domain
         public int time { get; set; }
 
 
+
+        public useCase(string name, int projectId, int time,string description)
+        {
+            Name = name;
+            ProjectId = projectId;
+            this.time = time;
+            Description = description;
+        }
     }
 }

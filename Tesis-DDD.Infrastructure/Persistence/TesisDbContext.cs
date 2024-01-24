@@ -13,6 +13,6 @@ namespace Tesis_DDD.Infrastructure.Persistence
         public DbSet<Resource> Resources { get; set; }
         public DbSet<Experience> Experiences { get; set; }
         public DbSet <Methodology> Methodologies { get; set; }
-        //public DbSet <useCase> UseCases { get; set; }
+        public DbSet <useCase> UseCases { get; set; }
     }
 }

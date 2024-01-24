@@ -11,7 +11,7 @@ namespace Tesis_DDD.Application.Specifications.Resources
             (!@params.ProjectId.HasValue||r.ProjectId==@params.ProjectId)
             )
         {
-            AddInclude(fd => fd.Experience);
+            AddInclude(r => r.Experience);
         }
     }
 }

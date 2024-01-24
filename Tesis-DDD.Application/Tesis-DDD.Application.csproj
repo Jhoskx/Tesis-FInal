@@ -29,7 +29,6 @@
 
   <ItemGroup>
     <Folder Include="Features\Resources\Commands\UpdateResource\" />
-    <Folder Include="Features\UseCase\Queries\" />
   </ItemGroup>
 
 </Project>
