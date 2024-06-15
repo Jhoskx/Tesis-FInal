@@ -12,8 +12,8 @@ using Tesis_DDD.Infrastructure.Persistence;
 namespace Tesis_DDD.Infrastructure.Migrations
 {
     [DbContext(typeof(TesisDbContext))]
-    [Migration("20240117022847_modifyresource")]
-    partial class modifyresource
+    [Migration("20240602021636_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -189,9 +189,54 @@ namespace Tesis_DDD.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ExperienceId");
+
                     b.HasIndex("ProjectId");
 
                     b.ToTable("Resources");
+                });
+
+            modelBuilder.Entity("Api_DDD.Domain.useCase", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("time")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("UseCases");
                 });
 
             modelBuilder.Entity("Api_DDD.Domain.Project", b =>
@@ -206,6 +251,23 @@ namespace Tesis_DDD.Infrastructure.Migrations
                 });
 
             modelBuilder.Entity("Api_DDD.Domain.Resource", b =>
+                {
+                    b.HasOne("Api_DDD.Domain.Experience", "Experience")
+                        .WithMany()
+                        .HasForeignKey("ExperienceId");
+
+                    b.HasOne("Api_DDD.Domain.Project", "Project")
+                        .WithMany()
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Experience");
+
+                    b.Navigation("Project");
+                });
+
+            modelBuilder.Entity("Api_DDD.Domain.useCase", b =>
                 {
                     b.HasOne("Api_DDD.Domain.Project", "Project")
                         .WithMany()

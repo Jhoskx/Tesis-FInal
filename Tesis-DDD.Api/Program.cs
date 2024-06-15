@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Tesis_DDD.Api.Controllers.Configuration;
 using Tesis_DDD.Application;
 using Tesis_DDD.Infrastructure;
 using Tesis_DDD.Infrastructure.Persistence;
@@ -11,6 +12,22 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+
+//builder.Services.AddControllers().AddNewtonsoftJson();
+//.AddNewtonsoftJson(x =>
+//{
+//    x.SerializerSettings.Converters.Add(new DatetimeSerializerHelper());
+//});
+builder.Services.AddEndpointsApiExplorer();
+
+//Configure swagger
+builder.Services.ConfigureSwagger();
+
+//Configuring culture info
+CultureInfoConfiguration.ConfigureCultureInfo();
+
 
 
 builder.Services.AddApplicationServices();
