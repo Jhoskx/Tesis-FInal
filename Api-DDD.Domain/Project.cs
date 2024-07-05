@@ -13,7 +13,9 @@ namespace Api_DDD.Domain
         public int TypeEstimationId { get; set; }
         public virtual TypeEstimation TypeEstimation { get; set; }
 
-        public Project(string name, string area, int methodologyId, string responsiblePosition, string developmentType, int typeEstimationId)
+        public Project(string name, string area, int methodologyId,
+            string responsiblePosition, string developmentType, 
+            int typeEstimationId)
         {
             Name = name;
             Area = area;

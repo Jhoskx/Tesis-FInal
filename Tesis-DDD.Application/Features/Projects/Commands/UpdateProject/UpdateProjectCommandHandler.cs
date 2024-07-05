@@ -26,9 +26,7 @@ namespace Tesis_DDD.Application.Features.Screen1s.Commands.UpdateScreen1
             project.MethodologyId = request.MethodologyId;
             project.ResponsiblePosition =request.ResponsiblePosition;
             project.DevelopmentType = request.DevelopmentType;
-            project.TestingHours = request.TestingHours;
-            project.DeploymentTime = request.DeploymentTime;
-            project.StartDate = request.StartDate;
+  
 
 
             await _unitOfWork.Complete();

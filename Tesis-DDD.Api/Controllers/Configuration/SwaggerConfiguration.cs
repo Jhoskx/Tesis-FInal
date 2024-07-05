@@ -34,8 +34,8 @@ namespace Tesis_DDD.Api.Controllers.Configuration
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Garaje.Guarantees.API",
-                    Description = "Garaje.Guarantees.API",
+                    Title = "Tesis.Final",
+                    Description = "Tesis.Final",
                 });
                 options.SchemaFilter<CustomSwaggerSchemaFilter>();
                 options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());

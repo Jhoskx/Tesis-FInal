@@ -27,9 +27,7 @@ namespace Tesis_DDD.Application.Features.Screen1s.Commands.AddScreen1
                request.MethodologyId,
                request.ResponsiblePosition,
                request.DevelopmentType,
-               request.TestingHours,
-               request.DeploymentTime,
-               request.StartDate
+               request.TypeEstimationId
                 );
             await _unitOfWork.Repository<Project>().AddAsync(project);
             return project.Id;
