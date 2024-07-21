@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using Tesis_DDD.Application.Features.Projects.Commands.UpdateDescription;
 using Tesis_DDD.Application.Features.Screen1s.Commands.AddScreen1;
 using Tesis_DDD.Application.Features.Screen1s.Commands.UpdateScreen1;
 using Tesis_DDD.Application.Features.Screen1s.Queries.Get;
@@ -36,13 +37,12 @@ namespace Tesis_DDD.Api.Controllers
           =>Ok(await _mediator.Send(command));
 
 
-        //[HttpPut("{nameproject}")]
-        //[ProducesResponseType(typeof(int), (int)HttpStatusCode.OK)]
-        //[ProducesDefaultResponseType]
-        //public async Task<ActionResult<int>> UpdateScreen([FromBody] UpdateProjectCommand command, string nameProject)
-        //{
-        //    command.Name = nameProject;
-        //    return Ok(await _mediator.Send(nameProject));
-        //}
+        [HttpPut("{Id}")]
+        [ProducesResponseType(typeof(int), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<int>> UpdateScreen([FromBody] UpdateDescriptionCommand command, int Id)
+        {
+            command.Id = Id;
+            return Ok(await _mediator.Send(command));
+        }
     }
 }

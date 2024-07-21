@@ -2,7 +2,7 @@
 
 namespace Tesis_DDD.Application.Features.Screen1s.Commands.UpdateScreen1
 {
-    public class UpdateProjectCommand:IRequest<string>
+    public class UpdateDescription:IRequest<string>
     {
 
         public string Name { get; set; }

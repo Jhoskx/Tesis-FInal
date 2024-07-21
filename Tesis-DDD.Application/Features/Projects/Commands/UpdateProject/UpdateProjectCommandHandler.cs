@@ -5,16 +5,16 @@ using Tesis_DDD.Application.Exceptions;
 
 namespace Tesis_DDD.Application.Features.Screen1s.Commands.UpdateScreen1
 {
-     public class UpdateProjectCommandHandler:IRequestHandler<UpdateProjectCommand,string>
+     public class UpdateDescriptionCommandHandler:IRequestHandler<UpdateDescription,string>
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public UpdateProjectCommandHandler(IUnitOfWork unitOfWork)
+        public UpdateDescriptionCommandHandler(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<string> Handle(UpdateProjectCommand request, CancellationToken cancellationToken)
+        public async Task<string> Handle(UpdateDescription request, CancellationToken cancellationToken)
         {
             var project = await _unitOfWork.Repository<Project>().GetFirstOrDefaultAsync(x=>x.Name == request.Name);
             if (project == null)
