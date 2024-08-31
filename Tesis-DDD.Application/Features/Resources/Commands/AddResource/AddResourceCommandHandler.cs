@@ -1,10 +1,11 @@
 ﻿using Api_DDD.Domain;
 using MediatR;
 using Tesis_DDD.Application.Contracts.Persistence;
+using Tesis_DDD.Application.Models.Request;
 
 namespace Tesis_DDD.Application.Features.Resources.Commands.AddResource
 {
-    public class AddResourceCommandHandler : IRequestHandler<AddResourceCommand,int>
+    public class AddResourceCommandHandler : IRequestHandler<AddResourceCommand, bool>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -13,17 +14,25 @@ namespace Tesis_DDD.Application.Features.Resources.Commands.AddResource
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<int> Handle(AddResourceCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(AddResourceCommand request, CancellationToken cancellationToken)
         {
-            var resource = new Resource
+            IEnumerable<Resource> list = Enumerable.Empty<Resource>();
+
+            foreach (var item in request.ResourceRequests)
+            {
+                list = list.Append(new Resource
                 (
-                request.Name,
-                request.Description,
-                request.ProjectId,
-                request.ExperienceId
-                );
-            await _unitOfWork.Repository<Resource>().AddAsync (resource);
-            return resource.Id;
+                       item.Name,
+                       item.Description,
+                       item.ProjectId
+                )
+                    ).ToList(); 
+            }
+            
+            await _unitOfWork.Repository<Resource>().AddRangeAsync(list.ToArray());
+
+            return true;
+            ;
         }
     }
 }

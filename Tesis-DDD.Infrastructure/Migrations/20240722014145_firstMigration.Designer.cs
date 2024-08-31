@@ -12,8 +12,8 @@ using Tesis_DDD.Infrastructure.Persistence;
 namespace Tesis_DDD.Infrastructure.Migrations
 {
     [DbContext(typeof(TesisDbContext))]
-    [Migration("20240629020026_updateTableProject")]
-    partial class updateTableProject
+    [Migration("20240722014145_firstMigration")]
+    partial class firstMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

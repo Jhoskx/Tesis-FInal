@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Tesis_DDD.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class firstMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -49,6 +49,24 @@ namespace Tesis_DDD.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TypeEstimation",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Status = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TypeEstimation", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Projects",
                 columns: table => new
                 {
@@ -59,9 +77,7 @@ namespace Tesis_DDD.Infrastructure.Migrations
                     MethodologyId = table.Column<int>(type: "int", nullable: false),
                     ResponsiblePosition = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DevelopmentType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TestingHours = table.Column<int>(type: "int", nullable: false),
-                    DeploymentTime = table.Column<int>(type: "int", nullable: false),
-                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TypeEstimationId = table.Column<int>(type: "int", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -76,6 +92,12 @@ namespace Tesis_DDD.Infrastructure.Migrations
                         name: "FK_Projects_Methodologies_MethodologyId",
                         column: x => x.MethodologyId,
                         principalTable: "Methodologies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Projects_TypeEstimation_TypeEstimationId",
+                        column: x => x.TypeEstimationId,
+                        principalTable: "TypeEstimation",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -145,6 +167,11 @@ namespace Tesis_DDD.Infrastructure.Migrations
                 column: "MethodologyId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Projects_TypeEstimationId",
+                table: "Projects",
+                column: "TypeEstimationId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Resources_ExperienceId",
                 table: "Resources",
                 column: "ExperienceId");
@@ -177,6 +204,9 @@ namespace Tesis_DDD.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "Methodologies");
+
+            migrationBuilder.DropTable(
+                name: "TypeEstimation");
         }
     }
 }
