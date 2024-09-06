@@ -24,6 +24,8 @@ namespace Tesis_DDD.Api.Controllers
             _mediator = mediator;
         }
 
+
+
         [HttpGet]
         [ProducesResponseType(typeof(List<ProjectVm>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IReadOnlyList<ProjectVm>>> GetNew([FromQuery] GetProjectByParamQuery query)

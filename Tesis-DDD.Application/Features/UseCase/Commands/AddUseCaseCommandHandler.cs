@@ -22,9 +22,7 @@ namespace Tesis_DDD.Application.Features.UseCase.Commands
                 lis = lis.Append(new useCase
                  (
                     item.Name,
-                    item.ProjectId,
-                    item.Time,
-                    item.Description
+                    item.ProjectId                    
                     )
                     ).ToList();
             }

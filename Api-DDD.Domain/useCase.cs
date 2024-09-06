@@ -2,21 +2,20 @@
 
 namespace Api_DDD.Domain
 {
-    public class useCase : MasterEntity
+    public class useCase : Entity
     {
         public string Name { get; set; }
         public int ProjectId { get; set; }
         public virtual Project Project { get; set; }
-        public int Time { get; set; }
+        //public int Time { get; set; }
 
 
 
-        public useCase(string name, int projectId, int time,string description)
+        public useCase(string name, int projectId)
         {
             Name = name;
             ProjectId = projectId;
-            Time = time;
-            Description = description;
+            //Time = time;
         }
     }
 }
