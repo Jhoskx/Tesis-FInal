@@ -29,7 +29,7 @@ namespace Tesis_DDD.Api.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(AddUseCaseCommand), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<AddUseCaseCommand>> CreateProject([FromBody] AddUseCaseCommand command)
-      => Ok(await _mediator.Send(command));
+      =>    Ok(await _mediator.Send(command));
 
     }
 }

@@ -5,7 +5,7 @@ using Tesis_DDD.Application.Models.Request;
 
 namespace Tesis_DDD.Application.Features.Resources.Commands.AddResource
 {
-    public class AddResourceCommandHandler : IRequestHandler<AddResourceCommand, bool>
+    public class AddResourceCommandHandler : IRequestHandler<AddResourceCommand, int>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -14,7 +14,7 @@ namespace Tesis_DDD.Application.Features.Resources.Commands.AddResource
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<bool> Handle(AddResourceCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(AddResourceCommand request, CancellationToken cancellationToken)
         {
             IEnumerable<Resource> list = Enumerable.Empty<Resource>();
 
@@ -22,16 +22,17 @@ namespace Tesis_DDD.Application.Features.Resources.Commands.AddResource
             {
                 list = list.Append(new Resource
                 (
-                       item.Name,
+
                        item.Description,
-                       item.ProjectId
+                       item.ProjectId,
+                       item.HoursPerWeek
                 )
-                    ).ToList(); 
+                    ).ToList();
             }
             
             await _unitOfWork.Repository<Resource>().AddRangeAsync(list.ToArray());
 
-            return true;
+            return request.ResourceRequests.Select(x=>x.ProjectId).FirstOrDefault();
             ;
         }
     }

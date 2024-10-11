@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tesis_DDD.Infrastructure.Persistence;
 
@@ -11,9 +12,11 @@ using Tesis_DDD.Infrastructure.Persistence;
 namespace Tesis_DDD.Infrastructure.Migrations
 {
     [DbContext(typeof(TesisDbContext))]
-    partial class TesisDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240912031034_updatetableresourcerequest")]
+    partial class updatetableresourcerequest
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -152,9 +155,6 @@ namespace Tesis_DDD.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AvailableHoursPerWeek")
-                        .HasColumnType("int");
-
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
@@ -224,12 +224,6 @@ namespace Tesis_DDD.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Complexity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ComplexityId")
-                        .HasColumnType("int");
-
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
@@ -249,19 +243,12 @@ namespace Tesis_DDD.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ProjectId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ProjectId1")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Transactions")
+                    b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProjectId1");
+                    b.HasIndex("ProjectId");
 
                     b.ToTable("UseCases");
                 });
@@ -300,7 +287,7 @@ namespace Tesis_DDD.Infrastructure.Migrations
                 {
                     b.HasOne("Api_DDD.Domain.Project", "Project")
                         .WithMany()
-                        .HasForeignKey("ProjectId1")
+                        .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

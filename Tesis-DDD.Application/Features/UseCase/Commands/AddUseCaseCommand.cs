@@ -4,7 +4,7 @@ using Tesis_DDD.Application.Models.Request;
 
 namespace Tesis_DDD.Application.Features.UseCase.Commands
 {
-    public class AddUseCaseCommand:IRequest<bool>
+    public class AddUseCaseCommand:IRequest<int>
     {
         public List<UseCaseRequest> UseCaseRequests { get; set; }
         

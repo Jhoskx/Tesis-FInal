@@ -20,8 +20,9 @@ namespace Tesis_DDD.Application.Features.UseCase.Queries
 
         public async Task<IReadOnlyList<UseCaseVm>> Handle(UseCaseByParamQuery request, CancellationToken cancellationToken)
         {
-            var spec = new UseCaseSpesification(request);
-            var usecase = await _unitOfWork.Repository<useCase>().GetAllWithSpec(spec);
+            //var spec = new UseCaseSpesification(request);
+            //var usecase = await _unitOfWork.Repository<useCase>().GetAllWithSpec(spec);
+            var usecase = await _unitOfWork.Repository<useCase>().GetAsync(x=>x.Id ==request.ProjectId);
 
             return _mapper.Map<IReadOnlyList<UseCaseVm>>(usecase);
         }
