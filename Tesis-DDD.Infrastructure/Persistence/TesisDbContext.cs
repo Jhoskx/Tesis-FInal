@@ -14,5 +14,7 @@ namespace Tesis_DDD.Infrastructure.Persistence
         public DbSet<Experience> Experiences { get; set; }
         public DbSet <Methodology> Methodologies { get; set; }
         public DbSet <useCase> UseCases { get; set; }
+        public DbSet <ComplexityLevel> ComplexityLevels { get; set; }
+        
     }
 }

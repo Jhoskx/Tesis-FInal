@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tesis_DDD.Infrastructure.Persistence;
 
@@ -11,9 +12,11 @@ using Tesis_DDD.Infrastructure.Persistence;
 namespace Tesis_DDD.Infrastructure.Migrations
 {
     [DbContext(typeof(TesisDbContext))]
-    partial class TesisDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241017031017_createtablecomplexy")]
+    partial class createtablecomplexy
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,9 +50,6 @@ namespace Tesis_DDD.Infrastructure.Migrations
 
                     b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("Value")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -258,6 +258,9 @@ namespace Tesis_DDD.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("Complexity")
+                        .HasColumnType("int");
+
                     b.Property<int>("ComplexityId")
                         .HasColumnType("int");
 
@@ -280,7 +283,11 @@ namespace Tesis_DDD.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProjectId")
+                    b.Property<string>("ProjectId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProjectId1")
                         .HasColumnType("int");
 
                     b.Property<int>("Transactions")
@@ -288,9 +295,7 @@ namespace Tesis_DDD.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ComplexityId");
-
-                    b.HasIndex("ProjectId");
+                    b.HasIndex("ProjectId1");
 
                     b.ToTable("UseCases");
                 });
@@ -327,19 +332,11 @@ namespace Tesis_DDD.Infrastructure.Migrations
 
             modelBuilder.Entity("Api_DDD.Domain.useCase", b =>
                 {
-                    b.HasOne("Api_DDD.Domain.ComplexityLevel", "Complexity")
-                        .WithMany()
-                        .HasForeignKey("ComplexityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Api_DDD.Domain.Project", "Project")
                         .WithMany()
-                        .HasForeignKey("ProjectId")
+                        .HasForeignKey("ProjectId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Complexity");
 
                     b.Navigation("Project");
                 });

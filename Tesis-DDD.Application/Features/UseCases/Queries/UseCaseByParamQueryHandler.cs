@@ -5,7 +5,7 @@ using Tesis_DDD.Application.Contracts.Persistence;
 using Tesis_DDD.Application.Models.ViewModels;
 using Tesis_DDD.Application.Specifications.UseCase;
 
-namespace Tesis_DDD.Application.Features.UseCase.Queries
+namespace Tesis_DDD.Application.Features.UseCases.Queries
 {
     public class UseCaseByParamQueryHandler : IRequestHandler<UseCaseByParamQuery, IReadOnlyList<UseCaseVm>>
     {

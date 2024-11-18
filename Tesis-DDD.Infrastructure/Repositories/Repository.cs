@@ -1,5 +1,7 @@
 ﻿using Azure;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 using Tesis_DDD.Application.Contracts.Persistence;
 using Tesis_DDD.Infrastructure.Persistence;
@@ -7,7 +9,7 @@ using Tesis_DDD.Infrastructure.Specification;
 
 namespace Tesis_DDD.Infrastructure.Repositories
 {
-    public  class Repository<T>:IRepository<T> where T :class
+    public class Repository<T> : IRepository<T> where T : class
     {
         protected readonly TesisDbContext _context;
         public Repository(TesisDbContext context) => _context = context;
@@ -99,7 +101,23 @@ namespace Tesis_DDD.Infrastructure.Repositories
         }
 
         public async Task<T> GetFirstOrDefaultAsync(Expression<Func<T, bool>> predicate) => await _context.Set<T>().FirstOrDefaultAsync(predicate);
+
         public T GetFirstOrDefaultNoAsync(Expression<Func<T, bool>> predicate) => _context.Set<T>().FirstOrDefault(predicate);
+        public async Task<List<T>> GetWithIncludeAsync(
+    Expression<Func<T, bool>> predicate,
+    Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null)
+        {
+            IQueryable<T> query = _context.Set<T>();
+
+            if (include != null)
+            {
+                query = include(query);
+            }
+
+            return await query.Where(predicate).ToListAsync();
+        }
+
+
 
         public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,

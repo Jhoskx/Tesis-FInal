@@ -3,7 +3,7 @@ using MediatR;
 using Tesis_DDD.Application.Contracts.Persistence;
 using Tesis_DDD.Application.Models.ViewModels;
 
-namespace Tesis_DDD.Application.Features.UseCase.Commands
+namespace Tesis_DDD.Application.Features.UseCases.Commands
 {
     public class AddUseCaseCommandHandler : IRequestHandler<AddUseCaseCommand, int>
     {

@@ -2,7 +2,7 @@
 using MediatR;
 using Tesis_DDD.Application.Models.Request;
 
-namespace Tesis_DDD.Application.Features.UseCase.Commands
+namespace Tesis_DDD.Application.Features.UseCases.Commands
 {
     public class AddUseCaseCommand:IRequest<int>
     {

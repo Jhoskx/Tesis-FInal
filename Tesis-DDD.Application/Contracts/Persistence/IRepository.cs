@@ -1,5 +1,6 @@
 ﻿using Api_DDD.Domain.Common;
 using Azure;
+using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
 namespace Tesis_DDD.Application.Contracts.Persistence
@@ -38,5 +39,9 @@ namespace Tesis_DDD.Application.Contracts.Persistence
         Task<T> GetFirstWithSpec(ISpecification<T> spec, bool asNoTracking = false);
         Task<int> CountAsync(ISpecification<T> spec);
         Task<T> PatchAsync(T entity, JsonPatchDocument jsonPatchDocument);
+
+        Task<List<T>> GetWithIncludeAsync(
+           Expression<Func<T, bool>> predicate,
+           Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null);
     }
 }
