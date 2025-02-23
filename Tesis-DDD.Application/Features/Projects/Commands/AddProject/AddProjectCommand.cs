@@ -10,6 +10,7 @@ namespace Tesis_DDD.Application.Features.Screen1s.Commands.AddScreen1
         public string ResponsiblePosition { get; set; }
         public string DevelopmentType { get; set; }
         public int TypeEstimationId { get; set; }
-    
+        public string Email { get; set; }
+
     }
 }
