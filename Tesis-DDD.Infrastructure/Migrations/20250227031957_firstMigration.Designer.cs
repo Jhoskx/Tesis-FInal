@@ -12,8 +12,8 @@ using Tesis_DDD.Infrastructure.Persistence;
 namespace Tesis_DDD.Infrastructure.Migrations
 {
     [DbContext(typeof(TesisDbContext))]
-    [Migration("20241102021510_modifa")]
-    partial class modifa
+    [Migration("20250227031957_firstMigration")]
+    partial class firstMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -283,11 +283,7 @@ namespace Tesis_DDD.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ProjectId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ProjectId1")
+                    b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
                     b.Property<int>("Transactions")
@@ -297,7 +293,7 @@ namespace Tesis_DDD.Infrastructure.Migrations
 
                     b.HasIndex("ComplexityId");
 
-                    b.HasIndex("ProjectId1");
+                    b.HasIndex("ProjectId");
 
                     b.ToTable("UseCases");
                 });
@@ -342,7 +338,7 @@ namespace Tesis_DDD.Infrastructure.Migrations
 
                     b.HasOne("Api_DDD.Domain.Project", "Project")
                         .WithMany()
-                        .HasForeignKey("ProjectId1")
+                        .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

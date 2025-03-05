@@ -1,4 +1,4 @@
-﻿using Api_DDD.Domain.Common;
+﻿ using Api_DDD.Domain.Common;
 
 namespace Api_DDD.Domain
 {

@@ -1,6 +1,5 @@
 ﻿using Api_DDD.Domain;
 using AutoMapper;
-using Tesis_DDD.Application.Features.UseCase.Queries;
 using Tesis_DDD.Application.Models.ViewModels;
 
 namespace Tesis_DDD.Application.Mappings

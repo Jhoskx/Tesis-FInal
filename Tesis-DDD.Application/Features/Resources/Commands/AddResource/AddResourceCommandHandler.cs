@@ -32,7 +32,8 @@ namespace Tesis_DDD.Application.Features.Resources.Commands.AddResource
             
             await _unitOfWork.Repository<Resource>().AddRangeAsync(list.ToArray());
 
-            return request.ResourceRequests.Select(x=>x.ProjectId).FirstOrDefault();
+             var x = request.ResourceRequests.Select(x=>x.ProjectId).FirstOrDefault();
+            return x;
             ;
         }
     }

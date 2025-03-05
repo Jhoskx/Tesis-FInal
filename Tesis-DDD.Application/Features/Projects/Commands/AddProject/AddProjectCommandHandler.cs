@@ -27,9 +27,10 @@ namespace Tesis_DDD.Application.Features.Screen1s.Commands.AddScreen1
                request.MethodologyId,
                request.ResponsiblePosition,
                request.DevelopmentType,
-               request.TypeEstimationId
+               request.TypeEstimationId,
+               request.Email
                 );
-            await _unitOfWork.Repository<Project>().AddAsync(project);
+            await _unitOfWork.Repository<Project>().AddAsync(project);  
             return project.Id;
         }
     }

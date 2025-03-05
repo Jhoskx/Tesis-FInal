@@ -17,11 +17,13 @@ namespace Tesis_DDD.Application.Features.UseCases.Commands
         public async Task<int> Handle(AddUseCaseCommand request, CancellationToken cancellationToken)
         {
             IEnumerable<useCase> lis = Enumerable.Empty<useCase>();
-            foreach (var item in lis)
+
+           
+            foreach (var item in request.UseCaseRequests)
             {
                 lis = lis.Append(new useCase
                  (
-                    item.Name,
+                    item.Description,
                     item.ProjectId,
                     item.ComplexityId
 
@@ -29,8 +31,8 @@ namespace Tesis_DDD.Application.Features.UseCases.Commands
                     ).ToList();
             }
             await _unitOfWork.Repository<useCase>().AddRangeAsync(lis.ToArray());
-            return request.UseCaseRequests.Select(x=>x.ProjectId).FirstOrDefault();
-
+             var data = request.UseCaseRequests.Select(x=>x.ProjectId).FirstOrDefault();
+            return data;
         }
     }
 }

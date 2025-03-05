@@ -1,7 +1,6 @@
 ﻿
 
 using Api_DDD.Domain;
-using Tesis_DDD.Application.Features.UseCase.Queries;
 
 namespace Tesis_DDD.Application.Specifications.UseCase
 {

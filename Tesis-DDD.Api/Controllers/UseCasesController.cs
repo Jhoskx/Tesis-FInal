@@ -1,9 +1,8 @@
-﻿using MediatR;
+﻿using System.Net;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
-using Tesis_DDD.Application.Features.Resources.Queries.GetResource;
-using Tesis_DDD.Application.Features.UseCase.Commands;
-using Tesis_DDD.Application.Features.UseCase.Queries;
+using Tesis_DDD.Application.Features.UseCases.Commands;
+using Tesis_DDD.Application.Features.UseCases.Queries;
 using Tesis_DDD.Application.Models.ViewModels;
 
 namespace Tesis_DDD.Api.Controllers

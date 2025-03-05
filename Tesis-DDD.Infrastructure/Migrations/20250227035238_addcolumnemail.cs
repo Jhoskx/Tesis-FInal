@@ -5,25 +5,24 @@
 namespace Tesis_DDD.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class updatetablecomplexy : Migration
+    public partial class addcolumnemail : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "Value",
-                table: "ComplexityLevels",
-                type: "int",
-                nullable: false,
-                defaultValue: 0);
+            migrationBuilder.AddColumn<string>(
+                name: "Email",
+                table: "Projects",
+                type: "nvarchar(max)",
+                nullable: true);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Value",
-                table: "ComplexityLevels");
+                name: "Email",
+                table: "Projects");
         }
     }
 }
