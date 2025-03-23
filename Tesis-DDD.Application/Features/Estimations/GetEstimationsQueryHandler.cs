@@ -24,7 +24,7 @@ namespace Tesis_DDD.Application.Features.Estimations
             //    var UseProject = await _unitOfWork.Repository<useCase>().GetAsync(x=>x.ProjectId.Equals(request.ProjectId),
             //include: q => q.Include(x => x));
 
-
+              
             var UseProject = await _unitOfWork.Repository<useCase>()
                 .GetWithIncludeAsync(
                 x=>x.ProjectId.Equals(request.ProjectId),
