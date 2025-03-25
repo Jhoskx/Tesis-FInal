@@ -13,6 +13,9 @@ namespace Tesis_DDD.Application.Mappings
                 { typeof(Project), typeof(ProjectVm) },
                 { typeof(Resource), typeof(ResourceVm) },
                 { typeof(useCase), typeof(UseCaseVm) },
+                { typeof(Area), typeof(MasterVm) },
+                { typeof(Charge), typeof(MasterVm) },
+                { typeof(DevelopmentType), typeof(MasterVm) },
            
             };
 
