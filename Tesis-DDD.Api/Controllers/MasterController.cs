@@ -2,7 +2,9 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Tesis_DDD.Application.Features.Master.Areas.Queries.GetAreas;
-using Tesis_DDD.Application.Features.UseCases.Queries;
+using Tesis_DDD.Application.Features.Master.Charges.Queries.GetCharges;
+using Tesis_DDD.Application.Features.Master.DevelopmentTypes.Queries.GetDevelopmentTypes;
+using Tesis_DDD.Application.Features.Master.Methodologys.Queries.GetMethodology;
 using Tesis_DDD.Application.Models.ViewModels;
 
 namespace Tesis_DDD.Api.Controllers
@@ -19,11 +21,34 @@ namespace Tesis_DDD.Api.Controllers
         }
 
 
-        [HttpGet]
+        [HttpGet("Areas")]
         [ProducesResponseType(typeof(List<MasterVm>), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<IReadOnlyList<MasterVm>>> GetResource( GetAreasQuery query)
+        public async Task<ActionResult<IReadOnlyList<MasterVm>>> GetAreas()
         {
-            return Ok(await _mediator.Send(query));
+            return Ok(await _mediator.Send(new GetAreasQuery()));
         }
+
+        [HttpGet("DevelopmentMethodology")]
+        [ProducesResponseType(typeof(List<MasterVm>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<IReadOnlyList<MasterVm>>> GetDevelopmentMethodology()
+        {
+            return Ok(await _mediator.Send(new GetMethodologyQuery()));
+        }
+
+        [HttpGet("PositionResponsible")]
+        [ProducesResponseType(typeof(List<MasterVm>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<IReadOnlyList<MasterVm>>> GetPositionResponsible()
+        {
+            return Ok(await _mediator.Send(new GetChargesQuery()));
+        }
+
+        [HttpGet("DevelopmentType")]
+        [ProducesResponseType(typeof(List<MasterVm>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<IReadOnlyList<MasterVm>>> GetDevelopmentType()
+        {
+            return Ok(await _mediator.Send(new GetDevelopmentTypesQuery()));
+        }
+
+
     }
 }

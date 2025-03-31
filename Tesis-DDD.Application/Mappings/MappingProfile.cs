@@ -16,6 +16,7 @@ namespace Tesis_DDD.Application.Mappings
                 { typeof(Area), typeof(MasterVm) },
                 { typeof(Charge), typeof(MasterVm) },
                 { typeof(DevelopmentType), typeof(MasterVm) },
+                { typeof(Methodology), typeof(MasterVm) }, 
            
             };
 

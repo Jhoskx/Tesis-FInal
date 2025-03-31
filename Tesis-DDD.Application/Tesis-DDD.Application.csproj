@@ -32,6 +32,7 @@
     <Folder Include="Features\Master\Areas\Commands\AddAreas\" />
     <Folder Include="Features\Master\Charges\Commands\AddCharges\" />
     <Folder Include="Features\Master\DevelopmentTypes\Commands\" />
+    <Folder Include="Features\Master\Methodologys\Commands\" />
     <Folder Include="Features\Resources\Commands\UpdateResource\" />
   </ItemGroup>
 
