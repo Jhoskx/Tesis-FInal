@@ -17,10 +17,12 @@ namespace Tesis_DDD.Application.Mappings
                 { typeof(Charge), typeof(MasterVm) },
                 { typeof(DevelopmentType), typeof(MasterVm) },
                 { typeof(Methodology), typeof(MasterVm) }, 
+                { typeof(ResourceList), typeof(MasterVm) }, 
            
             };
 
-           
+            CreateMap<DetailResource, DetailResourceVm>()
+                .ForMember(dest => dest.Description, opts => opts.MapFrom(src => src.ResourceList.Description));
 
             //CreateMap<Quotation, QuotationVm>()
             //    .ForMember(dest => dest.QuotationId, opts => opts.MapFrom(src => src.Id))

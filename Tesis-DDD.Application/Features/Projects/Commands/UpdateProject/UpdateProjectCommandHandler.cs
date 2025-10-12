@@ -22,10 +22,10 @@ namespace Tesis_DDD.Application.Features.Screen1s.Commands.UpdateScreen1
 
 
             project.Name =request.Name;
-            project.Area = request.Area;
+            project.AreaId = request.AreaId;
             project.MethodologyId = request.MethodologyId;
-            project.ResponsiblePosition =request.ResponsiblePosition;
-            project.DevelopmentType = request.DevelopmentType;
+            project.ChargeId =request.ChargeId;
+            project.DevelopmentTypeId = request.DevelopmentTypeId;
   
 
 

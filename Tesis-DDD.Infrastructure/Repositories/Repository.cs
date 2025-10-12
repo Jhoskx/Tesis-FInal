@@ -172,6 +172,11 @@ namespace Tesis_DDD.Infrastructure.Repositories
             await _context.SaveChangesAsync();
             return entity;
         }
+
+
+        public DbSet<T> GetQuery()
+        => _context.Set<T>();
+
     }
 }
 

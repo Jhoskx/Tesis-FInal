@@ -17,6 +17,8 @@ namespace Tesis_DDD.Infrastructure.Persistence
         public DbSet <Charge> Charges { get; set; }
         public DbSet <Area> Areas { get; set; }
         public DbSet <DevelopmentType> DevelopmentTypes { get; set; }
+        public DbSet <ResourceList> Listresources { get; set; }
+        public DbSet <DetailResource> DetailResources { get; set; }
         
     }
 }

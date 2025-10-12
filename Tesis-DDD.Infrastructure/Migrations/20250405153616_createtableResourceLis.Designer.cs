@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tesis_DDD.Infrastructure.Persistence;
 
@@ -11,9 +12,11 @@ using Tesis_DDD.Infrastructure.Persistence;
 namespace Tesis_DDD.Infrastructure.Migrations
 {
     [DbContext(typeof(TesisDbContext))]
-    partial class TesisDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250405153616_createtableResourceLis")]
+    partial class createtableResourceLis
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -116,51 +119,6 @@ namespace Tesis_DDD.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ComplexityLevel");
-                });
-
-            modelBuilder.Entity("Api_DDD.Domain.DetailResource", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("AbilityToEstimateEffort")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("EstimatedTimePerTask")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ExpectedImpact")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ResourceListId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ResourceListId");
-
-                    b.ToTable("DetailResources");
                 });
 
             modelBuilder.Entity("Api_DDD.Domain.DevelopmentType", b =>
@@ -390,7 +348,7 @@ namespace Tesis_DDD.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Listresources");
+                    b.ToTable("ListresourceQuery");
                 });
 
             modelBuilder.Entity("Api_DDD.Domain.TypeEstimation", b =>
@@ -468,17 +426,6 @@ namespace Tesis_DDD.Infrastructure.Migrations
                     b.HasIndex("ProjectId");
 
                     b.ToTable("UseCases");
-                });
-
-            modelBuilder.Entity("Api_DDD.Domain.DetailResource", b =>
-                {
-                    b.HasOne("Api_DDD.Domain.ResourceList", "ResourceList")
-                        .WithMany()
-                        .HasForeignKey("ResourceListId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ResourceList");
                 });
 
             modelBuilder.Entity("Api_DDD.Domain.Project", b =>

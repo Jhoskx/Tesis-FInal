@@ -23,10 +23,10 @@ namespace Tesis_DDD.Application.Features.Screen1s.Commands.AddScreen1
 
             var project = new Project(
                request.Name,
-               request.Area,
+               request.AreaId,
                request.MethodologyId,
-               request.ResponsiblePosition,
-               request.DevelopmentType,
+               request.ChargeId,
+               request.DevelopmentTypeId,
                request.TypeEstimationId,
                request.Email
                 );
